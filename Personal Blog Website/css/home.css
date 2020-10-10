@@ -1,0 +1,23 @@
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#search-img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer {
+  background-color: rgb(186, 241, 248);
+  color: rgba(14, 14, 14, 0.61);
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.name {
+  color: rgb(7, 179, 231);
+}

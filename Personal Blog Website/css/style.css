@@ -12,17 +12,18 @@ body {
   display: grid;
 }
 
-.container {
+.container,
+.home-content {
   height: 100%;
 }
 .header {
   padding-left: 10px;
   padding-right: 10px;
 }
-
-.content {
-  padding-left: 10px;
-  padding-right: 10px;
+.content,
+.home-content {
+  padding-left: 15px;
+  padding-right: 15px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -35,23 +36,30 @@ body {
 }
 
 @media (min-width: 600px) {
-  .content {
+  .home-content {
     display: grid;
     grid-template-columns: repeat(2, 50%);
   }
 }
 
-@media (min-width: 850px) {
-  .container {
+@media (min-width: 900px) {
+  .home-container {
     height: 100%;
   }
-  .content {
+  .home-content {
     grid-template-columns: repeat(3, 33%);
   }
 }
 
 @media (min-width: 1150px) {
+  .home-content,
+  .header,
   .content {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .home-content {
     grid-template-columns: repeat(4, 25%);
   }
 }

@@ -2,13 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: rgba(49, 49, 49, 1);
 }
-
 #search-img {
   width: 20px;
   height: 20px;
 }
-
 .footer {
   background-color: rgb(186, 241, 248);
   color: rgba(14, 14, 14, 0.61);

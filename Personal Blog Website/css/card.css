@@ -8,7 +8,6 @@
   flex-direction: column;
   margin: 15px;
 }
-
 .card:hover {
   box-shadow: 3px 10px 30px #49494979;
 }
@@ -17,7 +16,6 @@
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
-
 .card-body {
   padding: 10px;
 }
@@ -27,4 +25,7 @@
 .card-link {
   text-decoration: none;
   color: rgb(7, 179, 231);
+}
+.card-link:hover {
+  color: rgb(7, 179, 231, 0.8);
 }

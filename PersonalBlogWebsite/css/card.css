@@ -1,5 +1,5 @@
 .card {
-  height: 350px;
+  height: 380px;
   width: 300px;
   background-color: white;
   border-radius: 10px;
@@ -8,24 +8,47 @@
   flex-direction: column;
   margin: 15px;
 }
+
 .card:hover {
   box-shadow: 3px 10px 30px #49494979;
 }
+
 .card-img {
   height: 50%;
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
+
 .card-body {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
+.card-body > h2 {
+  color: rgb(7, 179, 231);
+  margin: 0;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+}
+
 #card-desc {
   color: #6e6e6e;
 }
+
 .card-link {
   text-decoration: none;
-  color: rgb(7, 179, 231);
+  background-color: rgb(7, 179, 231);
+  color: #fff;
+  padding: 10px;
+  margin-left: auto;
+  border-radius: 5px;
 }
+
 .card-link:hover {
-  color: rgb(7, 179, 231, 0.8);
+  background-color: rgb(51, 213, 253);
 }

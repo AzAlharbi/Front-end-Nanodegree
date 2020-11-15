@@ -1,5 +1,5 @@
 /* Global Variables */
-const APIKey = "5b9380b4dbee9ed7cb6343df63bca098";
+const APIKey = "&appid=5b9380b4dbee9ed7cb6343df63bca098";
 const zipCode = document.querySelector("#zip");
 const generatebtn = document.querySelector("#generate");
 const feel = document.querySelector("#feelings");
@@ -28,7 +28,7 @@ generatebtn.addEventListener("click", async (eve) => {
 const getCurrentData = async (data) => {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?id=${data}&appid=${APIKey}`
+      `http://api.openweathermap.org/data/2.5/weather?zip=${data}${APIKey}`
     );
     console.log("Success");
     const responseResults = await response.json();
@@ -58,9 +58,9 @@ const getServerData = () => {
       .then((res) => res.json())
       .then(
         (data) => (
-          (temp.textContent = data.temp),
-          (date.textContent = data.date),
-          (content.textContent = data.feel)
+          (temp.innerHTML = data.temp),
+          (date.innerHTML = data.date),
+          (content.innerHTML = data.feel)
         )
       );
   } catch (e) {

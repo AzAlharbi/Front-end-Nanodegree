@@ -1,53 +1,50 @@
-const name = document.getElementById("name");
-const result = document.getElementById("results");
 const confidence = document.querySelector(".confidence");
 const subjectivity = document.querySelector(".subjectivity");
 const agreement = document.querySelector(".agreement");
+const irony = document.querySelector(".irony");
+
+//handel the click event
 function handleSubmit(event) {
   event.preventDefault();
 
-  getCurrentData(name.value);
-  //   postData("/NLP", {
-  //     url: name.value,
-  //   }).then((data) => {
-  //     updateUI(data);
-  //   });
-  //   // check what text was put into the form field
-  //   let formText = document.getElementById("name").value;
-  //   checkForName(formText);
-
-  //   console.log("::: Form Submitted :::");
-  //   fetch("http://localhost:8080/test")
-  //     .then((res) => res.json())
-  //     .then(function (res) {
-  //       document.getElementById("results").innerHTML = res.message;
-  //     });
+  const url = document.getElementById("name").value;
+  if (Client.URLChecker(url)) {
+    console.log("passed");
+    getCurrentData("http://localhost:8008/sentiment", {
+      url: url,
+    }).then((data) => updateUI(data));
+  } else {
+    console.log("ther are somthimg wrong with your URL: " + url);
+  }
 }
 
-const KEY = "80317c4a224ce39b716c97586132a004";
-
-const getCurrentData = async (data) => {
+async function getCurrentData(URL, data) {
+  const response = await fetch(URL, {
+    method: "POST",
+    credentials: "same-origin",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
   try {
-    const response = await fetch(
-      `https://api.meaningcloud.com/sentiment-2.1?key=${KEY}&of=json&txt=${data}&model=general&lang=en`,
-      {
-        method: "POST",
-        // headers: { "Content-Type": "application/json" },
-      }
-    );
-    console.log("Success");
     const responseResults = await response.json();
-    console.log(responseResults["agreement"]);
-    updateUI(responseResults);
+    console.log("Success");
+    console.log(responseResults);
+    return responseResults;
+
+    //updateUI(responseResults);
   } catch (e) {
     console.log("Error " + e);
   }
-};
+}
 
 export function updateUI(data) {
   agreement.innerHTML = `Agreement :  ${data["agreement"]}`;
   confidence.innerHTML = `Confidence :  ${data["confidence"]}`;
   subjectivity.innerHTML = `Subjectivity : ${data["subjectivity"]}`;
+  irony.innerHTML = `Irony : ${data["irony"]}`;
 }
 
 export { handleSubmit };

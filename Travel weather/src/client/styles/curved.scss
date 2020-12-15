@@ -1,0 +1,11 @@
+.curved {
+  position: relative;
+  background: #209db3;
+  height: 40vh;
+  border-bottom-left-radius: 50% 55%;
+  border-bottom-right-radius: 50% 55%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}

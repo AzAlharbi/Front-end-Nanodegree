@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Travel API</title>
+        <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/744/744502.svg">
+    </head>
+
+    <body>
+        <main>
+            <section class="curved">
+                <header>
+                    <h1>Travel API</h1>
+                </header>
+                <section>
+                    <form class="">
+                        <div class="inputs">
+                            <input id="City name" type="text" name="input" value="" placeholder="Name" class="input nameInput">
+                            <input id="name" type="date" name="date" value="" placeholder="Date" class="input dateInput">
+                        </div>
+                        
+                        <button class="btn-submit">Submit</button>
+                    </form>
+                </section>
+            </section>
+            
+           
+
+            <section class="result">
+            </section>
+        </main>
+
+        <footer>
+            <h1>Made with 💙 by Abulaziz</h2>
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>

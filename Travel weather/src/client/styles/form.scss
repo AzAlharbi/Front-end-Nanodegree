@@ -1,0 +1,33 @@
+form {
+  border-radius: 8px;
+  padding: 40px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 3px 10px 20px #49494944;
+  margin-top: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.input {
+  padding: 5px 20px;
+  border-radius: 8px;
+  border: 0.5px solid #ccd5eecc;
+  width: 100%;
+  line-height: 16px;
+  margin: 10px 0;
+}
+.btn-submit {
+  padding: 5px 20px;
+  border-radius: 8px;
+  border: 0px;
+  width: 100%;
+  line-height: 16px;
+  margin: 10px 0;
+  color: #fff;
+  background: #209db3;
+  font-weight: bold;
+}
+.btn-submit:hover {
+  background: #22b8d3;
+}

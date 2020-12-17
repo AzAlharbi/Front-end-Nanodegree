@@ -16,13 +16,8 @@ console.log(__dirname);
 
 /* ******* Routes *******   */
 
-app.get("/", function (req, res) {
-  res.sendFile("dist/index.html");
-});
-
-APIdata = {};
-
-app.post("/setData", async function (req, res) {
+app.post("/setData", function (req, res) {
+  APIdata = {};
   const cityName = req.body.city;
   const date = req.body.date;
   const weather = req.body.weather;
@@ -42,3 +37,5 @@ app.post("/setData", async function (req, res) {
 app.listen(8008, function () {
   console.log("Example app listening on port 8008!");
 });
+
+module.exports = app;

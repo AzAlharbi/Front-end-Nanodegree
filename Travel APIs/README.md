@@ -4,6 +4,7 @@
 
 - [Introduction](#Introduction)
 - [Technologies](#Technologies)
+- [Additions](#Additions)
 
 ## Instructions
 
@@ -25,3 +26,7 @@ this project focuses on these points :
 - mini-css-extract-plugin
 - terser-webpack-plugin
 - optimize-css-assets-webpack-plugin
+
+## Additions
+
+- you can delete the trip information

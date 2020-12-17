@@ -50,6 +50,7 @@ export function insert(ev) {
       const lat = city.geonames[0].lat;
       const lng = city.geonames[0].lng;
       const weather = getWeather(lat, lng);
+      console.log(weather);
       return weather;
     })
     .then((weather) => {
